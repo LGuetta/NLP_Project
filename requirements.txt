@@ -6,3 +6,4 @@ matplotlib
 seaborn
 gensim
 pyLDAvis
+vaderSentiment
