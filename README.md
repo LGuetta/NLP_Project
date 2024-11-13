@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project performs sentiment analysis on Bitcoin-related tweets from 2022 and examines their influence on Bitcoin (BTC) price movements. By analyzing millions of tweets and corresponding minute-level BTC price data, the project aims to uncover patterns and insights that can inform trading strategies and understand market sentiment dynamics.
+This project investigates the impact of Bitcoin-related tweet sentiment on Bitcoin (BTC) price movements. Using NLP techniques, including sentiment analysis, we analyze over 1.3 million tweets from December 2022 to predict the direction of Bitcoin's hourly returns. The project leverages minute-level BTC price data to explore potential correlations and insights into market sentiment.
 
 ## Table of Contents
 
@@ -20,27 +20,19 @@ This project performs sentiment analysis on Bitcoin-related tweets from 2022 and
 ## Data
 
 ### 1. Bitcoin Price Data
-- **Source:** Binance BTCUSDT 2022 Minute Data
-- **Description:** Contains minute-level BTC price information for the year 2022.
-- **Columns:**
-  - `unix`: Unix timestamp in milliseconds
-  - `date`: Date and time
-  - `symbol`: Trading pair symbol (e.g., BTCUSDT)
-  - `open`: Opening price
-  - `high`: Highest price
-  - `low`: Lowest price
-  - `close`: Closing price
-  - `volume`: Trading volume
-  - `volume_from`: Volume from the base asset
-  - `tradecount`: Number of trades
-
+- **Source**: Binance BTCUSDT data
+- **Description**: Minute-level and hourly BTC price information from 2022.
+- **Key Files**:
+  - `Binance_BTCUSDT_1h.csv`: Hourly BTC prices.
+  - `Binance_BTCUSDT_2022_minute.csv`: Minute-level BTC prices, used for generating 15- and 30-minute returns.
+  
 ### 2. Bitcoin Tweets Data
-- **Source:** [Kaggle - Bitcoin Tweets 2021-2022](https://www.kaggle.com/datasets/hiraddolatzadeh/bitcoin-tweets-2021-2022)
-- **Description:** Contains millions of tweets related to Bitcoin from 2022.
-- **Columns:**
+- **Source**: [Kaggle - Bitcoin Tweets 2021-2022](https://www.kaggle.com/datasets/hiraddolatzadeh/bitcoin-tweets-2021-2022)
+- **Description**: Contains 1.3 million Bitcoin-related tweets from December 2022.
+- **Columns**:
   - `datetime`: Timestamp of the tweet
   - `date`: Date of the tweet
-  - `username`: Twitter handle of the user
+  - `username`: Twitter user handle
   - `text`: Content of the tweet
 
 ## Project Structure
@@ -78,19 +70,17 @@ bitcoin_sentiment_analysis/
 
 ### Descriptions
 
-- **data/**: Contains raw datasets.
-- **notebooks/**: Jupyter notebooks for exploratory data analysis and visualizations.
-- **src/**: Python modules for different stages of the project.
-  - `data_preprocessing.py`: Functions to load and clean data.
-  - `sentiment_analysis.py`: Functions to perform sentiment analysis.
-  - `feature_engineering.py`: Functions to create features for modeling.
-  - `model_training.py`: Functions to train and evaluate predictive models.
-  - `utils.py`: Utility functions.
-- **models/**: Serialized machine learning models.
-- **outputs/**: Processed data and final model outputs.
-- **requirements.txt**: Python dependencies.
-- **README.md**: Project documentation.
-- **main.py**: Orchestrates the workflow by calling functions from `src/` modules.
+- **data/**: Holds all data files, separated into `raw/`, `processed/`, and `external/` subdirectories.
+- **notebooks/**: Jupyter notebooks for data exploration and analysis.
+- **src/**: Contains scripts for each stage of the project:
+  - `data/`: Scripts for loading and cleaning raw data.
+  - `features/`: Scripts for generating features from processed data.
+  - `models/`: Scripts for training, evaluating, and saving models.
+  - `visualization/`: Functions for data visualization.
+- **reports/**: Final reports and generated figures.
+- **requirements.txt**: List of dependencies.
+- **README.md**: Overview and setup instructions.
+- **main.py**: Central script for running the complete workflow.
 
 ## Setup & Installation
 
@@ -138,22 +128,19 @@ bitcoin_sentiment_analysis/
    - Navigate to the `notebooks/` directory and open `Exploratory_Data_Analysis.ipynb` to perform EDA and visualize data insights.
 
 ## Analysis
-
-- **Sentiment Analysis:** Uses VADER to assign sentiment scores to each tweet, indicating positive, negative, or neutral sentiments.
-- **Topic Modeling:** Implements LDA to identify prevalent topics within the Bitcoin-related tweets.
-- **Feature Engineering:** Combines sentiment scores, tweet counts, and topic distributions with BTC price data to create features for modeling.
-
+- Sentiment Analysis: Uses both BERT "kk08 cryptobert" for crypto-specific sentiment and VADER for general sentiment scoring.
+- Feature Engineering: Combines sentiment scores, tweet counts, and Bitcoin price returns over various time intervals.
+- Lagged Features: Includes lagged sentiment scores to capture sentiment shifts over time.
+  
 ## Model Training
-
-- **Algorithms Used:** Random Forest Regressor, Linear Regression, etc.
-- **Evaluation Metrics:** Mean Squared Error (MSE), Root Mean Squared Error (RMSE), R-squared (R²).
-- **Hyperparameter Tuning:** Utilizes Grid Search or Random Search to optimize model parameters.
-
+- Models: Random Forest, XGBoost, and SVM, chosen for their effectiveness in binary classification tasks.
+- Hyperparameter Tuning: Applied grid search or random search to optimize model parameters.
+- Evaluation Metrics: Models were evaluated based on Accuracy, ROC-AUC, and F1-score.
+  
 ## Results
+The project demonstrated that tweet sentiment has a moderate correlation with Bitcoin price movements. Sentiment scores, especially when lagged, were shown to contribute predictive power for determining the return sign of Bitcoin prices in hourly intervals.
 
-- **Sentiment vs. BTC Price:** Analyzes the correlation between tweet sentiments and BTC price movements.
-- **Topic Insights:** Identifies key topics driving market sentiment.
-- **Predictive Performance:** Evaluates how well the model can predict BTC prices based on tweet data.
+
 
 ## Contributing
 
