@@ -34,6 +34,7 @@ This project investigates the impact of Bitcoin-related tweet sentiment on Bitco
   - `date`: Date of the tweet
   - `username`: Twitter user handle
   - `text`: Content of the tweet
+- **Indication**: The file might not be included in the repository since its dimension exceeds the limit. You can download it for free on the link above.
 
 ## Project Structure
 
@@ -47,8 +48,6 @@ bitcoin_sentiment_analysis/
 │   ├── processed/                    # Preprocessed datasets
 │   │   ├── btc_data_processed.csv
 │   │   └── tweets_data_processed.csv
-│   └── external/                     # External data sources
-│       └── additional_data.csv       # Example for other sources, if needed
 │
 ├── notebooks/                        # Jupyter notebooks
 │   ├── Exploratory_Data_Analysis.ipynb
@@ -76,7 +75,6 @@ bitcoin_sentiment_analysis/
 │   └── final_model.pkl               # Serialized final model
 │
 ├── reports/                          # Project reports
-│   ├── figures/                      # Figures and plots
 │   └── results_report.pdf            # Final results report
 │
 ├── tests/                            # Unit tests and test cases
@@ -97,10 +95,9 @@ bitcoin_sentiment_analysis/
 
 ### Descriptions
 
-- **data/**: Holds all data files, divided into `raw/`, `processed/`, and `external/` subdirectories.
+- **data/**: Holds all data files, divided into `raw/` and `processed/`.
   - **raw/**: Contains original datasets in their unmodified state.
   - **processed/**: Stores cleaned and processed data used in modeling.
-  - **external/**: Holds any external data sources that supplement the analysis.
 
 - **notebooks/**: Contains Jupyter notebooks for data exploration, visualization, and model analysis.
 
@@ -114,7 +111,7 @@ bitcoin_sentiment_analysis/
 
 - **models/**: Directory for saving serialized models, such as the final trained model.
 
-- **reports/**: Contains project reports and generated figures for documentation.
+- **reports/**: Contains project report.
 
 - **tests/**: Includes unit tests for various components of the project to ensure functionality and stability.
 
