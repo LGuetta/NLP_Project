@@ -70,22 +70,6 @@ bitcoin_sentiment_analysis/
 │   ├── Vader+Elkulako_Sentiment_grouping.ipynb
 │   └── kk08_sentiment.ipynb
 │
-├── src/                               # Source code
-│   ├── data/                          # Data loading and preprocessing scripts
-│   │   ├── data_preprocessing.py
-│   │   └── utils.py
-│   ├── features/                      # Feature engineering scripts
-│       └── feature_engineering.py
-│   ├── models/                        # Model training and evaluation scripts
-│       ├── model_training.py
-│       └── RNN_training.py
-│   ├── sentiment/                     # Sentiment analysis scripts
-│       ├── sentiment_analysis.py
-│       └── Vader+Elkulako_Sentiment_grouping.py
-│
-├── models/                            # Serialized models
-│   └── lda_model.pkl
-│
 ├── outputs/                           # Generated outputs and final results
 │   ├── cleaned_tweets_data.csv
 │   ├── final_model.pkl
@@ -107,8 +91,7 @@ bitcoin_sentiment_analysis/
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/bitcoin_sentiment_analysis.git
-   cd bitcoin_sentiment_analysis
+   git clone https://github.com/LGuetta/NLP_Project.git
    ```
 
 2. **Create a Virtual Environment**
