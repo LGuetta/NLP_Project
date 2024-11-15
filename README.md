@@ -70,10 +70,6 @@ bitcoin_sentiment_analysis/
 │   ├── Vader+Elkulako_Sentiment_grouping.ipynb
 │   └── kk08_sentiment.ipynb
 │
-├── outputs/                           # Generated outputs and final results
-│   ├── cleaned_tweets_data.csv
-│   ├── merged_data_november_07_to_21.csv
-│
 ├── reports/                           # Project reports
 │   └── final_report.pdf
 │
@@ -98,12 +94,6 @@ This section provides an overview of the primary files and their respective role
 - **`Tweets_preprocessing.ipynb`**: Preprocesses tweets by removing irrelevant elements such as usernames, URLs, punctuation, and common stopwords.
 - **`Vader+Elkulako_Sentiment_grouping.ipynb`**: Applies VADER and ElKulako models to extract sentiment from the tweets, assigning sentiment categories (e.g., bearish, neutral, bullish).
 - **`kk08_sentiment.ipynb`**: Utilizes the kk08 CryptoBERT model to analyze the sentiment of the tweets, categorizing them as positive or negative.
-
-## Outputs
-- **`cleaned_tweets_data.csv`**: Preprocessed and cleaned tweet data used for analysis.
-- **`final_model.pkl`**: The trained model serialized for future use.
-- **`merged_data_november_07_to_21.csv`**: A dataset containing merged financial and sentiment data for analysis during specific periods.
-- **`sentiment_scores.csv`**: The sentiment scores extracted from the tweets.
 
 ## Reports
 - **`final_report.pdf`**: A comprehensive report detailing the project's objectives, methodology, results, analysis, and conclusions. It includes related work, preprocessing, sentiment analysis methods, and the evaluation of different models.
