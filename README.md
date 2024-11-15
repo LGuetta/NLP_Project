@@ -70,10 +70,6 @@ bitcoin_sentiment_analysis/
 │   ├── Vader+Elkulako_Sentiment_grouping.ipynb
 │   └── kk08_sentiment.ipynb
 │
-├── reports/                           # Project report
-│   └── final_report.pdf
-│
-│
 ├── requirements.txt                   # Python dependencies
 ├── .gitignore                         # Git ignore file
 ├── README.md                          # Project documentation
