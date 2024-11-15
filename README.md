@@ -112,7 +112,9 @@ This section provides an overview of the primary files and their respective role
 
 
 
-## Setup & Installation
+The setup and installation instructions you provided are mostly correct, but they could be formatted a little more clearly. Here is an adjusted version in a README-friendly format:
+
+### Setup & Installation
 
 1. **Clone the Repository**
    ```bash
@@ -139,13 +141,12 @@ This section provides an overview of the primary files and their respective role
    pip install -r requirements.txt
    ```
 
-## Usage
+### Usage
 
 1. **Run the Main Script**
    ```bash
    python main.py
    ```
-
    This script will:
    - Load and preprocess the data.
    - Perform sentiment analysis.
@@ -156,17 +157,17 @@ This section provides an overview of the primary files and their respective role
 2. **Explore Notebooks**
    - Navigate to the `notebooks/` directory and open `EDA.ipynb` to perform EDA and visualize data insights.
 
-## Analysis
-- Sentiment Analysis: Uses both BERT "kk08 cryptobert" for crypto-specific sentiment and VADER for general sentiment scoring.
-- Feature Engineering: Combines sentiment scores, tweet counts, and Bitcoin price returns over various time intervals.
-- Lagged Features: Includes lagged sentiment scores to capture sentiment shifts over time.
-  
-## Model Training
-- Models: Random Forest, XGBoost, and SVM, chosen for their effectiveness in binary classification tasks.
-- Hyperparameter Tuning: Applied grid search or random search to optimize model parameters.
-- Evaluation Metrics: Models were evaluated based on Accuracy, ROC-AUC, and F1-score.
-  
-## Results
+### Analysis
+- **Sentiment Analysis**: Uses both BERT "kk08 cryptobert" for crypto-specific sentiment and VADER for general sentiment scoring.
+- **Feature Engineering**: Combines sentiment scores, tweet counts, and Bitcoin price returns over various time intervals.
+- **Lagged Features**: Includes lagged sentiment scores to capture sentiment shifts over time.
+
+### Model Training
+- **Models**: Random Forest, XGBoost, and SVM, chosen for their effectiveness in binary classification tasks.
+- **Hyperparameter Tuning**: Applied grid search or random search to optimize model parameters.
+- **Evaluation Metrics**: Models were evaluated based on Accuracy, ROC-AUC, and F1-score.
+
+### Results
 The project demonstrated that tweet sentiment has a moderate correlation with Bitcoin price movements. Sentiment scores, especially when lagged, were shown to contribute predictive power for determining the return sign of Bitcoin prices in hourly intervals.
 
 ## Contributing
@@ -193,10 +194,7 @@ Contributions are welcome! Please fork the repository and create a pull request 
 This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgements
-Project made by:
--  Lorenzo Guetta
--  Claudia Jurado
--  Ivan Isaenko
+Project made by: Claudia Jurado, Ivan Isaenko, and Lorenzo Guetta
 
 - [Kaggle Datasets](https://www.kaggle.com/datasets/hiraddolatzadeh/bitcoin-tweets-2021-2022)
 - [VADER Sentiment Analysis](https://github.com/cjhutto/vaderSentiment)
