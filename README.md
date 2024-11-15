@@ -182,6 +182,10 @@ Contributions are welcome! Please fork the repository and create a pull request 
 This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgements
+Project made by:
+-  Lorenzo Guetta
+-  Claudia Jurado
+-  Ivan Isaenko
 
 - [Kaggle Datasets](https://www.kaggle.com/datasets/hiraddolatzadeh/bitcoin-tweets-2021-2022)
 - [VADER Sentiment Analysis](https://github.com/cjhutto/vaderSentiment)
