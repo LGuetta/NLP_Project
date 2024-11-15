@@ -75,8 +75,6 @@ bitcoin_sentiment_analysis/
 │   ├── sentiment/                     # Sentiment analysis scripts
 │       ├── sentiment_analysis.py
 │       └── Vader+Elkulako_Sentiment_grouping.py
-│   └── visualization/                 # Visualization scripts
-│       └── visualization_utils.py
 │
 ├── models/                            # Serialized models
 │   └── lda_model.pkl
@@ -90,14 +88,13 @@ bitcoin_sentiment_analysis/
 ├── reports/                           # Project reports
 │   └── final_report.pdf
 │
-├── tests/                             # Unit tests for functionality
-│   ├── test_data_preprocessing.py
-│   ├── test_feature_engineering.py
-│   └── test_model_training.py
 │
 ├── requirements.txt                   # Python dependencies
+├── .gitignore                         # Git ignore file
 ├── README.md                          # Project documentation
+├── LICENSE                            # MIT License
 └── main.py                            # Main script for orchestrating the workflow
+
 
 
 
@@ -116,39 +113,35 @@ bitcoin_sentiment_analysis/
 
 - **notebooks/**: Contains Jupyter notebooks for exploratory data analysis, sentiment analysis, and model training:
   - `EDA.ipynb`: For initial data exploration and visualization.
-  - `Sentiment_Analysis.ipynb`: For applying sentiment analysis on tweets.
-  - `Model_Training.ipynb`: For model training and evaluation.
+  - `Fin_data_group.ipynb`: For model training and evaluation.
+  - `kk08_sentiment.ipynb`: For model training and evaluation.
+  - `Merging_sent_fin.ipynb`: For model training and evaluation.
+  - `Models_1H.ipynb`: For model training and evaluation.
+  - `Models_15m.ipynb`: For model training and evaluation.
+  - `Models_30m.ipynb`: For model training and evaluation.
+  - `Tweets_filtering.ipynb`: For model training and evaluation.
+  - `Tweets_preprocessing.ipynb`: For model training and evaluation.
+  - `Tweets_preprocessing.ipynb`: For model training and evaluation.
 
 - **src/**: Source code for the project's pipeline, divided by functionality:
   - **data/**: Scripts for data loading and preprocessing:
     - `data_preprocessing.py`: Functions to load and preprocess raw data.
+    - `utilsg.py`: Functions to help with data processing.
   - **features/**: Scripts for feature extraction and engineering:
     - `feature_engineering.py`: Functions to create features from datasets.
   - **models/**: Scripts for training, evaluating, and tuning models:
     - `model_training.py`: Logic for training machine learning models.
-    - `evaluate_model.py`: Functions for model evaluation.
+    - `RNN_training.py`: Functions for RNN training.
   - **sentiment/**: Scripts for various sentiment analysis models:
     - `vader_sentiment.py`: Script for VADER sentiment analysis.
     - `cryptobert_sentiment.py`: Script for CryptoBERT sentiment analysis.
-  - **utils/**: General utility functions for common tasks:
-    - `helpers.py`: Helper functions used throughout the pipeline.
-  - **visualization/**: Functions for generating plots and figures:
-    - `plot_functions.py`: Plotting functions for data visualization.
 
 - **models/**: Directory for storing trained machine learning models:
-  - `random_forest.pkl`: Serialized Random Forest model.
-  - `xgboost_model.pkl`: Serialized XGBoost model.
+  - `lda_modelt.pkl`: Serialized lda model.
+
 
 - **reports/**: Directory for project documentation and reports:
   - `final_report.pdf`: Final compiled report in PDF.
-  - `latex_sources/`: LaTeX source files for the report:
-    - `main.tex`: Main LaTeX document file.
-    - `bibliography.bib`: References used in the report.
-
-- **tests/**: Directory containing unit tests for scripts in the project:
-  - `test_data_processing.py`: Tests for data preprocessing functions.
-  - `test_sentiment_analysis.py`: Tests for sentiment analysis functions.
-  - `test_model_training.py`: Tests for model training and evaluation scripts.
 
 - **outputs/**: Stores generated output files from the workflow:
   - `cleaned_data.csv`: Final cleaned data.
