@@ -17,6 +17,10 @@ This project investigates the impact of Bitcoin-related tweet sentiment on Bitco
 - [Contributing](#contributing)
 - [License](#license)
 
+## IMPORTANT WARNING
+
+The data folder is too large to be included in this repository. You can download the full dataset directly from the following link: [Google Drive](https://drive.google.com/drive/folders/1xoaTUISduJwv0dqQumHL2INuhyTlSd7W?usp=drive_link)
+
 ## Data
 
 ### 1. Bitcoin Price Data
@@ -94,68 +98,7 @@ bitcoin_sentiment_analysis/
 ├── README.md                          # Project documentation
 ├── LICENSE                            # MIT License
 └── main.py                            # Main script for orchestrating the workflow
-
-
-
-
 ```
-
-### Descriptions
-
-- **data/**: Contains all data files, divided into subdirectories:
-  - **raw/**: Holds original datasets in their unmodified state, including:
-    - `Binance_BTCUSDT_2022_minute.csv`: Minute-level BTC price data for 2022.
-    - `bitcoin-tweets-2022.csv`: Bitcoin-related tweets from 2022.
-  - **processed/**: Stores cleaned and processed data ready for modeling, including:
-    - `btc_data_processed.csv`: Cleaned Bitcoin price data.
-    - `tweets_data_december.csv`: Filtered tweets for December 2022.
-    - `merged_data.csv`: Merged dataset of sentiment and returns.
-
-- **notebooks/**: Contains Jupyter notebooks for exploratory data analysis, sentiment analysis, and model training:
-  - `EDA.ipynb`: For initial data exploration and visualization.
-  - `Fin_data_group.ipynb`: For model training and evaluation.
-  - `kk08_sentiment.ipynb`: For model training and evaluation.
-  - `Merging_sent_fin.ipynb`: For model training and evaluation.
-  - `Models_1H.ipynb`: For model training and evaluation.
-  - `Models_15m.ipynb`: For model training and evaluation.
-  - `Models_30m.ipynb`: For model training and evaluation.
-  - `Tweets_filtering.ipynb`: For model training and evaluation.
-  - `Tweets_preprocessing.ipynb`: For model training and evaluation.
-  - `Tweets_preprocessing.ipynb`: For model training and evaluation.
-
-- **src/**: Source code for the project's pipeline, divided by functionality:
-  - **data/**: Scripts for data loading and preprocessing:
-    - `data_preprocessing.py`: Functions to load and preprocess raw data.
-    - `utilsg.py`: Functions to help with data processing.
-  - **features/**: Scripts for feature extraction and engineering:
-    - `feature_engineering.py`: Functions to create features from datasets.
-  - **models/**: Scripts for training, evaluating, and tuning models:
-    - `model_training.py`: Logic for training machine learning models.
-    - `RNN_training.py`: Functions for RNN training.
-  - **sentiment/**: Scripts for various sentiment analysis models:
-    - `vader_sentiment.py`: Script for VADER sentiment analysis.
-    - `cryptobert_sentiment.py`: Script for CryptoBERT sentiment analysis.
-
-- **models/**: Directory for storing trained machine learning models:
-  - `lda_modelt.pkl`: Serialized lda model.
-
-
-- **reports/**: Directory for project documentation and reports:
-  - `final_report.pdf`: Final compiled report in PDF.
-
-- **outputs/**: Stores generated output files from the workflow:
-  - `cleaned_data.csv`: Final cleaned data.
-  - `sentiment_scores.csv`: Sentiment scores obtained from analysis.
-  - `model_predictions.csv`: Predictions from the trained models.
-
-- **requirements.txt**: Contains all Python dependencies required to run the project.
-
-- **README.md**: Project documentation and setup instructions.
-
-- **main.py**: Main script for executing the complete workflow, including data processing, sentiment extraction, and model training.
-
-
-
 
 ## Setup & Installation
 
@@ -200,7 +143,7 @@ bitcoin_sentiment_analysis/
    - Save the outputs.
 
 2. **Explore Notebooks**
-   - Navigate to the `notebooks/` directory and open `Exploratory_Data_Analysis.ipynb` to perform EDA and visualize data insights.
+   - Navigate to the `notebooks/` directory and open `EDA.ipynb` to perform EDA and visualize data insights.
 
 ## Analysis
 - Sentiment Analysis: Uses both BERT "kk08 cryptobert" for crypto-specific sentiment and VADER for general sentiment scoring.
@@ -214,8 +157,6 @@ bitcoin_sentiment_analysis/
   
 ## Results
 The project demonstrated that tweet sentiment has a moderate correlation with Bitcoin price movements. Sentiment scores, especially when lagged, were shown to contribute predictive power for determining the return sign of Bitcoin prices in hourly intervals.
-
-
 
 ## Contributing
 
