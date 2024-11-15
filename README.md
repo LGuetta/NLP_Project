@@ -111,9 +111,6 @@ This section provides an overview of the primary files and their respective role
 - **`final_report.pdf`**: A comprehensive report detailing the project's objectives, methodology, results, analysis, and conclusions. It includes related work, preprocessing, sentiment analysis methods, and the evaluation of different models.
 
 
-
-The setup and installation instructions you provided are mostly correct, but they could be formatted a little more clearly. Here is an adjusted version in a README-friendly format:
-
 ### Setup & Installation
 
 1. **Clone the Repository**
