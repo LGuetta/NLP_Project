@@ -59,6 +59,9 @@ bitcoin_sentiment_analysis/
 │   ├── EDA.ipynb
 │   ├── Fin_data_group.ipynb
 │   ├── Merging_sent_fin.ipynb
+│   ├── 15m_NN.ipynb                   #Neural networks Models
+│   ├── 30m_NN.ipynb
+│   ├── 1H_NN.ipynb
 │   ├── Models_15m.ipynb
 │   ├── Models_1H.ipynb
 │   ├── Models_30m.ipynb
