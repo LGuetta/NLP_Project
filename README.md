@@ -86,6 +86,31 @@ bitcoin_sentiment_analysis/
 ├── LICENSE                            # MIT License
 └── main.py                            # Main script for orchestrating the workflow
 ```
+# Description
+
+This section provides an overview of the primary files and their respective roles within the project:
+
+## Notebooks
+- **`EDA.ipynb`**: Exploratory Data Analysis (EDA) for understanding the dataset, visualizing data distributions, and identifying trends. This includes sentiment distribution graphs from various sentiment analysis models.
+- **`Fin_data_group.ipynb`**: Prepares and processes financial data for subsequent analysis, including calculations of Bitcoin returns over different timeframes.
+- **`Merging_sent_fin.ipynb`**: Merges sentiment analysis data with financial data to create a comprehensive dataset for model training.
+- **`15m_NN.ipynb`, `30m_NN.ipynb`, `1H_NN.ipynb`**: Neural network models designed for different timeframes (15 minutes, 30 minutes, 1 hour) to predict Bitcoin price movements.
+- **`Models_15m.ipynb`, `Models_1H.ipynb`, `Models_30m.ipynb`**: Implements Random Forest, XGBoost, and SVM models for predicting Bitcoin price direction based on different time intervals.
+- **`Tweets_filtering.ipynb`**: Filters the initial dataset of tweets, retaining those relevant to Bitcoin sentiment analysis.
+- **`Tweets_preprocessing.ipynb`**: Preprocesses tweets by removing irrelevant elements such as usernames, URLs, punctuation, and common stopwords.
+- **`Vader+Elkulako_Sentiment_grouping.ipynb`**: Applies VADER and ElKulako models to extract sentiment from the tweets, assigning sentiment categories (e.g., bearish, neutral, bullish).
+- **`kk08_sentiment.ipynb`**: Utilizes the kk08 CryptoBERT model to analyze the sentiment of the tweets, categorizing them as positive or negative.
+
+## Outputs
+- **`cleaned_tweets_data.csv`**: Preprocessed and cleaned tweet data used for analysis.
+- **`final_model.pkl`**: The trained model serialized for future use.
+- **`merged_data_november_07_to_21.csv`**: A dataset containing merged financial and sentiment data for analysis during specific periods.
+- **`sentiment_scores.csv`**: The sentiment scores extracted from the tweets.
+
+## Reports
+- **`final_report.pdf`**: A comprehensive report detailing the project's objectives, methodology, results, analysis, and conclusions. It includes related work, preprocessing, sentiment analysis methods, and the evaluation of different models.
+
+
 
 ## Setup & Installation
 
