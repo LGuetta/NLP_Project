@@ -40,88 +40,132 @@ This project investigates the impact of Bitcoin-related tweet sentiment on Bitco
 
 ```
 bitcoin_sentiment_analysis/
-│
-├── data/                             # Data directory
-│   ├── raw/                          # Original, raw datasets
+├── data/                             # Contains raw and processed datasets
+│   ├── raw/                          # Raw, unprocessed datasets
 │   │   ├── Binance_BTCUSDT_2022_minute.csv
+│   │   ├── Binance_BTCUSDT_1h.csv
 │   │   └── bitcoin-tweets-2022.csv
 │   ├── processed/                    # Preprocessed datasets
-│   │   ├── btc_data_processed.csv
-│   │   └── tweets_data_processed.csv
+│       ├── btc_data_processed.csv    # Cleaned Bitcoin price data
+│       ├── tweets_data_december.csv  # Filtered tweets (December 2022)
+│       └── merged_data.csv           # Data merged for modeling
 │
-├── notebooks/                        # Jupyter notebooks
+├── notebooks/                        # Contains Jupyter notebooks for analysis
 │   ├── Exploratory_Data_Analysis.ipynb
-│   └── Model_Training_Analysis.ipynb # Notebook for model training analysis
+│   ├── Sentiment_Analysis_Models.ipynb
+│   └── Model_Training.ipynb
 │
-├── src/                              # Source code
-│   ├── __init__.py                   # Indicates `src` is a package
-│   ├── data/                         # Data processing scripts
-│   │   ├── load_data.py              # Data loading functions
-│   │   └── preprocess_data.py        # Data preprocessing functions
-│   ├── features/                     # Feature engineering scripts
-│   │   └── feature_engineering.py    # Feature generation and extraction
-│   ├── models/                       # Model scripts
-│   │   ├── train_model.py            # Training model functions
-│   │   └── evaluate_model.py         # Model evaluation functions
+├── src/                              # Contains scripts for various tasks
+│   ├── __init__.py                   # Initialization for the src package
+│   ├── data/                         # Scripts for data processing
+│   │   ├── load_data.py              # Loading datasets
+│   │   └── preprocess_data.py        # Preprocessing steps
+│   ├── features/                     # Scripts for feature engineering
+│   │   └── feature_engineering.py    # Creating and managing features
+│   ├── models/                       # Scripts for training and evaluation
+│   │   ├── train_model.py            # Model training logic
+│   │   ├── evaluate_model.py         # Evaluation logic
+│   │   └── hyperparameter_tuning.py  # Grid search and optimization
 │   ├── sentiment/                    # Sentiment analysis scripts
-│   │   ├── vader_sentiment.py        # VADER sentiment scoring
-│   │   └── bert_sentiment.py         # BERT sentiment scoring
-│   ├── utils/                        # Utility functions
-│   │   └── helpers.py                # Helper functions for the project
-│   └── visualization/                # Visualization scripts
-│       └── plot_functions.py         # Functions for plotting results
+│   │   ├── vader_sentiment.py        # VADER sentiment analysis
+│   │   ├── bert_sentiment.py         # BERT-based sentiment analysis
+│   │   └── cryptobert_sentiment.py   # CryptoBERT sentiment analysis
+│   ├── utils/                        # Utility scripts
+│   │   └── helpers.py                # General utility functions
+│   └── visualization/                # Scripts for plotting
+│       └── plot_functions.py         # Functions to visualize data and results
 │
-├── models/                           # Saved model files
-│   └── final_model.pkl               # Serialized final model
+├── models/                           # Saved models and serialized files
+│   ├── random_forest.pkl             # Trained Random Forest model
+│   ├── svm_model.pkl                 # Trained SVM model
+│   └── xgboost_model.pkl             # Trained XGBoost model
 │
-├── reports/                          # Project reports
-│   └── results_report.pdf            # Final results report
+├── reports/                          # Reports, results, and analysis
+│   ├── figures/                      # Visualizations and plots
+│   ├── final_report.pdf              # Compiled final report in PDF
+│   └── draft_latex/                  # LaTeX files for report
+│       ├── main.tex                  # Main LaTeX file
+│       ├── bibliography.bib          # References file
+│       └── figures/                  # Figures used in the LaTeX report
 │
-├── tests/                            # Unit tests and test cases
-│   ├── test_data_preprocessing.py
-│   ├── test_sentiment_analysis.py
-│   └── test_model_training.py
+├── tests/                            # Test scripts
+│   ├── test_data_preprocessing.py    # Tests for preprocessing scripts
+│   ├── test_sentiment_analysis.py    # Tests for sentiment models
+│   └── test_model_training.py        # Tests for model training logic
 │
 ├── outputs/                          # Outputs generated by the pipeline
-│   ├── cleaned_data.csv              # Preprocessed and cleaned data
-│   ├── sentiment_scores.csv          # Computed sentiment scores
-│   └── predictions.csv               # Model predictions
+│   ├── cleaned_data.csv              # Cleaned data output
+│   ├── sentiment_scores.csv          # Sentiment scores
+│   └── model_predictions.csv         # Model predictions
 │
-├── requirements.txt                  # Project dependencies
+├── requirements.txt                  # Dependencies for the project
 ├── README.md                         # Project documentation
-└── main.py                           # Main script to run the pipeline
+├── main.py                           # Main script to run the pipeline
+└── .gitignore                        # Git ignore file
+
 
 ```
 
 ### Descriptions
 
-- **data/**: Holds all data files, divided into `raw/` and `processed/`.
-  - **raw/**: Contains original datasets in their unmodified state.
-  - **processed/**: Stores cleaned and processed data used in modeling.
+- **data/**: Contains all data files, separated into subdirectories:
+  - **raw/**: Holds original datasets in their unmodified state, including:
+    - `Binance_BTCUSDT_2022_minute.csv`: Minute-level BTC price data for 2022.
+    - `bitcoin-tweets-2022.csv`: Bitcoin-related tweets from 2022.
+  - **processed/**: Stores cleaned and processed data ready for modeling, including:
+    - `btc_data_processed.csv`: Cleaned Bitcoin price data.
+    - `tweets_data_december.csv`: Filtered tweets for December 2022.
+    - `merged_data.csv`: Merged dataset of sentiment and returns.
 
-- **notebooks/**: Contains Jupyter notebooks for data exploration, visualization, and model analysis.
+- **notebooks/**: Jupyter notebooks for exploratory data analysis, sentiment analysis, and model training:
+  - `Exploratory_Data_Analysis.ipynb`: For initial data exploration and visualization.
+  - `Sentiment_Analysis_Models.ipynb`: For testing and comparing sentiment analysis techniques.
+  - `Model_Training.ipynb`: For model training and evaluation.
 
-- **src/**: Houses all source code, divided by functionality:
-  - **data/**: Data loading and preprocessing scripts.
-  - **features/**: Scripts for feature engineering and extraction.
-  - **models/**: Scripts for training and evaluating machine learning models.
-  - **sentiment/**: Scripts for different sentiment analysis models (e.g., VADER and BERT).
-  - **utils/**: Helper functions for general utility tasks.
-  - **visualization/**: Scripts for generating visualizations and plots.
+- **src/**: Source code for the project's pipeline, divided into specific functionalities:
+  - **data/**: Scripts for loading and preprocessing raw data:
+    - `load_data.py`: Functions for loading datasets.
+    - `preprocess_data.py`: Steps for cleaning and preparing data.
+  - **features/**: Scripts for feature generation and extraction:
+    - `feature_engineering.py`: Functions to engineer features from datasets.
+  - **models/**: Scripts for training, evaluating, and tuning models:
+    - `train_model.py`: Logic for training machine learning models.
+    - `evaluate_model.py`: Functions for model evaluation.
+    - `hyperparameter_tuning.py`: Scripts for grid search and optimization.
+  - **sentiment/**: Scripts for sentiment analysis using different models:
+    - `vader_sentiment.py`: VADER sentiment analysis implementation.
+    - `bert_sentiment.py`: BERT-based sentiment analysis.
+    - `cryptobert_sentiment.py`: CryptoBERT sentiment analysis.
+  - **utils/**: General utility functions for common tasks:
+    - `helpers.py`: Helper functions used across the pipeline.
+  - **visualization/**: Scripts for generating plots and figures:
+    - `plot_functions.py`: Functions for data visualization.
 
-- **models/**: Directory for saving serialized models, such as the final trained model.
+- **models/**: Directory to store trained machine learning models and serialized files:
+  - `random_forest.pkl`: Random Forest model.
+  - `svm_model.pkl`: Support Vector Machine model.
+  - `xgboost_model.pkl`: XGBoost model.
 
-- **reports/**: Contains project report.
+- **reports/**: Contains project reports and related files:
+  - `final_report.pdf`: The compiled LaTeX report for the project.
 
-- **tests/**: Includes unit tests for various components of the project to ensure functionality and stability.
 
-- **outputs/**: Stores generated outputs from the pipeline, including cleaned data, sentiment scores, and model predictions.
+- **tests/**: Includes unit tests for project scripts:
+  - `test_data_preprocessing.py`: Tests for data preprocessing scripts.
+  - `test_sentiment_analysis.py`: Tests for sentiment analysis methods.
+  - `test_model_training.py`: Tests for model training and evaluation.
 
-- **requirements.txt**: Lists all necessary dependencies for the project.
+- **outputs/**: Stores outputs generated during the pipeline execution:
+  - `cleaned_data.csv`: The final cleaned dataset.
+  - `sentiment_scores.csv`: Sentiment analysis results.
+  - `model_predictions.csv`: Predictions from trained models.
 
-- **README.md**: Project documentation, providing an overview and setup instructions.
+- **requirements.txt**: Specifies all Python dependencies required for running the project.
 
-- **main.py**: Main script that orchestrates the entire workflow, running the data processing, feature engineering, sentiment extraction, and model training pipeline.
+- **README.md**: This document serves as the project's primary documentation.
+
+- **main.py**: The central script for orchestrating the entire pipeline, including data preprocessing, sentiment analysis, feature engineering, and model training.
+
 
 
 ## Setup & Installation
