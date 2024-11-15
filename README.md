@@ -72,9 +72,7 @@ bitcoin_sentiment_analysis/
 │
 ├── outputs/                           # Generated outputs and final results
 │   ├── cleaned_tweets_data.csv
-│   ├── final_model.pkl
 │   ├── merged_data_november_07_to_21.csv
-│   └── sentiment_scores.csv
 │
 ├── reports/                           # Project reports
 │   └── final_report.pdf
