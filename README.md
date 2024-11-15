@@ -49,17 +49,17 @@ bitcoin_sentiment_analysis/
 │   ├── raw/                           # Original datasets
 │   │   ├── Binance_BTCUSDT_2022_minute.csv
 │   │   └── bitcoin-tweets-2022.csv
-│   ├── processed/                     # Cleaned and preprocessed data
+│   ├── processed/                     # Cleaned and preprocessed data. Look google drive for full datasets.
 │       ├── BTCUSDT_1H.csv
 │       ├── BTCUSDT_15m.csv
 │       ├── BTCUSDT_30m.csv
 │       └── cleaned_price_data.csv
 │
-├── notebooks/                         # Jupyter notebooks for exploration and analysis
+├── notebooks/                         # Jupyter notebooks for exploration analysis, data pre-processing and models
 │   ├── EDA.ipynb
 │   ├── Fin_data_group.ipynb
 │   ├── Merging_sent_fin.ipynb
-│   ├── 15m_NN.ipynb                   #Neural networks Models
+│   ├── 15m_NN.ipynb                   
 │   ├── 30m_NN.ipynb
 │   ├── 1H_NN.ipynb
 │   ├── Models_15m.ipynb
@@ -70,7 +70,7 @@ bitcoin_sentiment_analysis/
 │   ├── Vader+Elkulako_Sentiment_grouping.ipynb
 │   └── kk08_sentiment.ipynb
 │
-├── reports/                           # Project reports
+├── reports/                           # Project report
 │   └── final_report.pdf
 │
 │
@@ -78,7 +78,7 @@ bitcoin_sentiment_analysis/
 ├── .gitignore                         # Git ignore file
 ├── README.md                          # Project documentation
 ├── LICENSE                            # MIT License
-└── main.py                            # Main script for orchestrating the workflow
+
 ```
 # Description
 
